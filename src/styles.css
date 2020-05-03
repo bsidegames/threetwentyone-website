@@ -1,0 +1,147 @@
+/*https://www.google.com/search?client=firefox-b-d&q=google+font+pixelated+font*/
+/*https://www.google.com/search?client=firefox-b-d&q=css+set+font+via+cdn*/
+
+body {
+    background: black;
+    margin: 0;
+    width: 100%;
+    font-family: "Roboto", Arial, sans-serif;
+}
+body p {
+    color: #c46037;
+}
+body h1 {
+    font-size: 3rem;
+
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+
+.hero__container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.hero__container--image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+    /* background-image: inline styles set a dynamic background-image */
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.hero__container--fade-out::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 90%);
+    width: 100%;
+    height: 50%;
+}
+.hero__heading {
+    padding: 0.25rem 3rem;
+    margin: 4rem 0;
+    background-color: #000000;
+    opacity: 0.7;
+    box-shadow: 0 0 0.5rem 0.5rem #000000;
+}
+
+.main {
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%
+}
+
+
+.store-link__container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding-top: 30%;
+}
+.store-link__iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+@media only screen and (max-width: 725px) {
+    /* Keep aspect ratio of iframe */
+    .store-link__container {
+        padding-top: 56.25%; /* 16:9 */
+        margin: 0 auto -150px auto;
+    }
+}
+@media only screen and (max-width: 500px) {
+    /* Steam's iframe is not designed for small screens and has limited responsiveness */
+    .store-link__container {
+        display: none;
+    }
+}
+
+
+.content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: 3rem;
+    max-width: 44rem;
+}
+
+.description {
+    font-family: Roboto, Arial, sans-serif;
+    color: #c46037;
+    font-size: 1rem;
+    margin: 0 0.5rem;
+}
+.description img {
+    padding: 0.25rem 0;
+    width: 100%;
+    height: auto;
+}
+.description h1, .description h2, .description h3,
+.description h4, .description h5, .description h6 {
+    font-family: Roboto, Arial, sans-serif;
+    padding-top: 0.75rem;
+}
+.description li {
+    padding-bottom: 0.25em;
+}
+
+.screenshot__container {
+    max-width: 44rem;
+    text-align: left;
+    margin: 0 0.5rem;
+}
+
+.divider {
+    height: 0.7rem;
+    max-width: 95vw;
+    margin: 4rem 0;
+}
+
+.footer {
+    text-align: center;
+    margin: -1rem auto 4rem auto;
+}
+.footer__social-media {
+
+}

@@ -1,28 +1,53 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import * as PropTypes from "prop-types";
-import Gallery from 'react-grid-gallery';
-
+import Gallery from "react-photo-gallery";
+import Carousel, { Modal, ModalGateway } from "react-images";
 
 const Screenshot = ({ screenshots }) => {
+
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+  const openLightbox = useCallback((event, { photo, index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
+
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };
 
   const images = () => {
     return screenshots.map(el =>(
       {
-        src: el.path_full,
-        thumbnail: el.path_thumbnail,
-        thumbnailWidth: 600,
-        thumbnailHeight: 338,
+        src: el.path_thumbnail,
+        srcFull: el.path_full,
+        width: 600,
+        height: 338,
       }
     ))
   }
-  const array = images();
+  const photos = images();
 
   return (
     <section className="screenshot__container">
       <h2 align="center">Screenshots</h2>
-      <Gallery images={array}
-               enableImageSelection={false}
-      />
+
+      <Gallery photos={photos}  onClick={openLightbox} />
+      <ModalGateway>
+        {viewerIsOpen ? (
+          <Modal onClose={closeLightbox}>
+            <Carousel
+              currentIndex={currentImage}
+              views={photos.map(x => ({
+                src: x.srcFull,
+                caption: x.title,
+              }))}
+            />
+          </Modal>
+        ) : null}
+      </ModalGateway>
     </section>
   );
 };

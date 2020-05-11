@@ -1,11 +1,11 @@
 /** @see https://www.gatsbyjs.org/docs/browser-apis/ */
 import React from "react";
-import RootSettings from "./src/components/RootSettings";
+import RootWrapper from "./src/components/RootWrapper";
 
 /**
  * Apply page wide settings to the Gatsby root element such as styles and tags for <head>.
  */
-export const wrapRootElement = ({ element }) => <RootSettings>{element}</RootSettings>;
+export const wrapRootElement = ({ element }) => <RootWrapper>{element}</RootWrapper>;
 
 /**
  * Trigger reload for service worker when an update is available.

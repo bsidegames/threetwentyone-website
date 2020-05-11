@@ -3,7 +3,7 @@ import * as PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import "../styles.css";
 
-const RootSettings = ({ children }) => {
+const RootWrapper = ({ children }) => {
   return (
     <>
       <Helmet>
@@ -19,7 +19,7 @@ const RootSettings = ({ children }) => {
     </>
   );
 };
-RootSettings.propTypes = {
+RootWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 };
-export default RootSettings;
+export default RootWrapper;

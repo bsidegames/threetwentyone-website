@@ -1,4 +1,5 @@
-const autoprefixer = require("autoprefixer");
+const STEAM_URL = process.env.STEAM_URL || "https://store.steampowered.com/app/261570/Ori_and_the_Blind_Forest/";
+const API_ENDPOINT = process.env.API_ENDPOINT; // || require("./api-endpoint.js").API_ENDPOINT;
 
 module.exports = {
   siteMetadata: {
@@ -11,12 +12,11 @@ module.exports = {
     `gatsby-plugin-offline`,
 
     /* --- CSS --- */
-    // `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
         postCssPlugins: [
-          autoprefixer({ overrideBrowserslist: ["> 1%", "last 2 versions"] }),
+          require("autoprefixer")({ overrideBrowserslist: ["> 1%", "last 2 versions"] }),
         ],
       },
     },
@@ -24,5 +24,18 @@ module.exports = {
     /* --- image --- */
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+
+    /* --- source --- */
+    {
+      resolve: "gatsby-source-apiserver",
+      options: {
+        url: API_ENDPOINT,
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        data: { url: STEAM_URL },
+        name: `websiteData`,
+        entityLevel: `data`,
+      },
+    },
   ],
 };

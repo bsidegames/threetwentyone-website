@@ -4,7 +4,7 @@ import * as PropTypes from "prop-types";
 const Hero = ({ heroImg, children }) => {
   return (
     <div className="hero__container hero__container--image hero__container--fade-out"
-         style={{ backgroundImage: `url(${heroImg}` }}>
+         style={{ backgroundImage: `url(${heroImg}`, backgroundSize: "contain" }}>
       {children}
     </div>
   );

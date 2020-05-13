@@ -2,14 +2,14 @@ import React from "react";
 import * as PropTypes from "prop-types";
 import ReactPlayer from "react-player";
 
-const playerStyle = {
+const playerTagStyle = {
   zIndex: 2,
   position: "relative",
   paddingBottom: "56.25%", /* 16:9 */
   maxWidth: "640px",
   maxHeight: "auto",
 };
-const videoStyle = {
+const videoTagStyle = {
   style: {
     position: "absolute",
     top: 0,
@@ -24,8 +24,8 @@ const Trailer = ({ trailer }) => {
   if (trailer === undefined) return null;
   return (
     <>
-      <ReactPlayer style={playerStyle}
-                   url={trailer.webm[480]}
+      <ReactPlayer style={playerTagStyle}
+                   url={trailer.webm.alternative_480}
                    playing
                    loop controls volume={0.8} muted
                    onContextMenu={e => e.preventDefault()}
@@ -35,7 +35,7 @@ const Trailer = ({ trailer }) => {
                      file: {
                        attributes:
                          {
-                           ...videoStyle,
+                           ...videoTagStyle,
                            controlsList: "nodownload",
                            disablePictureInPicture: true,
                          },

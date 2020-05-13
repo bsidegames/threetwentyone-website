@@ -17,6 +17,19 @@ Kick off your project with this default boilerplate.
 
 2. Set Steam URL
 
+Two possibilities:
+
+1. Create an environment variable `STEAM_URL` in Netlify. 
+  
+   Set your preferred Steam game with a URL to Steam such as `https://store.steampowered.com/app/815490/Chainmonsters`
+
+2. Set an URL directly in `gatsby-config-js`:
+```
+const STEAM_URL = process.env.STEAM_URL || "https://store.steampowered.com/app/815490/Chainmonsters";
+// If no STEAM_URL is set as a Netlify environment variable 
+// "https://store.steampowered.com/app/815490/Chainmonsters" will be used as default
+```
+
 
 ## 🧐 What's inside?
 

@@ -1,6 +1,6 @@
 # Project specific
 .idea
-example-data.js
+api-endpoint.js
 
 # Logs
 logs

@@ -22,7 +22,7 @@ const Screenshot = ({ screenshots }) => {
     return screenshots.map(el =>(
       {
         src: el.path_thumbnail,
-        srcFull: el.path_full,
+        srcfull: el.path_full,
         width: 600,
         height: 338,
       }
@@ -34,14 +34,14 @@ const Screenshot = ({ screenshots }) => {
     <section className="screenshot__container">
       <h2 align="center">Screenshots</h2>
 
-      <Gallery photos={photos}  onClick={openLightbox} />
+      <Gallery photos={photos} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
             <Carousel
               currentIndex={currentImage}
               views={photos.map(x => ({
-                src: x.srcFull,
+                src: x.srcfull,
                 caption: x.title,
               }))}
             />

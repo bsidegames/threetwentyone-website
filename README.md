@@ -7,12 +7,16 @@
   Oberion Template 16bit
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Kick off your project with this default boilerplate. 
 
 ## 🚀 Quick start
 
-Deploy!
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/oberionio/gatsby-starter-oberion-16bit)
+1. Deploy to Netlify
+
+    [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/oberionio/gatsby-starter-oberion-16bit)
+
+2. Set Steam URL
+
 
 ## 🧐 What's inside?
 
@@ -24,8 +28,8 @@ coming soon
 
 ## License
 
-Standard MIT license: Free for private and commercial use.
+MIT license: Free for private and commercial use.
 
 ## Check out our project
 
-We're building the website builder for game developers at [![Oberion](https://oberion.io).
+We're building the website builder for game developers at [Oberion](https://oberion.io).

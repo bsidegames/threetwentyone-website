@@ -1,5 +1,7 @@
-const STEAM_URL = process.env.STEAM_URL || "https://store.steampowered.com/app/261570/Ori_and_the_Blind_Forest/";
-const API_ENDPOINT = process.env.API_ENDPOINT; // || require("./api-endpoint.js").API_ENDPOINT;
+/* This API will be deprecated and replaced after initial release. Until then have fun! */
+const API_ENDPOINT = "https://igneous-sandbox-259013.appspot.com/api/website-data/v1";
+/* Use environment variables or replace the Steam URL to change the content of your site. */
+const STEAM_URL = process.env.STEAM_URL || "https://store.steampowered.com/app/237930/Transistor/";
 
 module.exports = {
   siteMetadata: {

@@ -1,6 +1,5 @@
 # Project specific
 .idea
-api-endpoint.js
 
 # Logs
 logs
